@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y -q \
     libcurl4-openssl-dev
 
 RUN pip2 install ipython[notebook]
+RUN pip2 install py4j
+ENV PYTHONPATH $SPARK_HOME/python/:$PYTHONPATH
 
 EXPOSE 8888
 
